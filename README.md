@@ -1,6 +1,5 @@
-# LassoARE & Lasso-View Methodology Submission
-
-This folder contains the minimum viable running code (Methodology Part) for academic submission or deployment. This method combines **Lasso-View (graph-based semi-supervised label propagation algorithm)** and **LassoARE (adversarial autoencoding subpopulation clustering algorithm)** for interactive selection and high-resolution reclustering of single-cell transcriptome data (scRNA-seq).
+# PARE: an adversarial learning framework for integrating few-shot biological priors into single-cell and spatial omics embedding
+This repository is the methodology part of the PARE (Lasso-ARE) package, which integrates for interactive selection and high-resolution reclustering of single-cell and spatial omics data.
 
 ## Directory Structure
 
