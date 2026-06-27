@@ -4,10 +4,10 @@ This folder contains the minimum viable running code (Methodology Part) for acad
 
 ## Directory Structure
 
-Please make sure the following files are correctly placed in the `submit` folder:
+Please make sure the following files are correctly placed in this folder:
 
 ```
-submit/
+this folder
 ├── LassoARE/                  # LassoARE deep adversarial clustering core package
 │   ├── __init__.py
 │   ├── lasso_ARE.py
@@ -28,32 +28,19 @@ submit/
 ├── install_python.sh          # One-click compilation and installation script via Pip
 ├── install_conda.sh           # One-click compilation and installation script via Conda
 ├── selection.txt              # Initial cell selection index file for demo testing
-├── demo_single_cluster.ipynb  # Demonstration Jupyter Notebook
-└── adata_fib.h5ad             # Demonstration single-cell dataset (needs to be manually copied to this directory)
+├── demo_single_cluster.ipynb  # Standard demonstration Jupyter Notebook (using DFU dataset)
+├── demo_single_cluster_fast.ipynb # Fast demonstration Jupyter Notebook (using pbmc3k dataset)
+└── pairpotlpa.cpython-310-x86_64-linux-gnu.so # Pre-compiled C++ module for Linux x86_64 (Python 3.10)
 ```
-
-> [!IMPORTANT]
-> **Note (Preparation)**:
-> Due to background terminal constraints in the agent environment, please manually run the following commands in the project root directory to copy all dependencies and plugins to the `submit` folder:
-> 
-> ```bash
-> # 1. Copy the entire LassoARE directory (including core algorithm and LassoARE_plugin subdirectory)
-> cp -r LassoARE/ submit/
-> 
-> # 2. Copy the Lasso-View dependencies from NKT_tmp
-> cp NKT_tmp/lassoView.cpp NKT_tmp/setup.py NKT_tmp/lassoLPA.py NKT_tmp/do_lasso.py submit/
-> 
-> # 3. Copy the demonstration dataset
-> cp datasets_260407/adata_fib.h5ad submit/
-> ```
-
----
 
 ## Quick Start Guide
 
 ### 1. Compiling the C++ Module & Installing Dependencies
 
 Lasso-View uses C++ for efficient graph adjacency weight calculation and label propagation. Before running, it needs to be compiled for your specific system.
+
+> [!TIP]
+> A pre-compiled dynamic link library `pairpotlpa.cpython-310-x86_64-linux-gnu.so` is already provided for Linux x86_64 environments with Python 3.10. If you are using a different operating system or Python version, please use the installation scripts below to recompile.
 
 We provide two options of one-click installation and compilation scripts based on your virtual environment manager:
 
@@ -79,11 +66,23 @@ This script will install the dependencies declared in `requirements.txt` via `pi
 
 After compilation, a dynamic link library compatible with your system (e.g., `pairpotlpa.so` or `pairpotlpa.pyd`) will be generated in the current directory.
 
-### 2. Running the Demo Workflow
+### 2. Running the Demo Workflows
 
-Open Jupyter Notebook and run `demo_single_cluster.ipynb`:
+We provide two Jupyter Notebooks to demonstrate the workflow. You can choose based on your computing resources:
 
-1. **Import & Load Data**: Load the `adata_fib.h5ad` demonstration dataset.
+#### Option A: Standard Demo (`demo_single_cluster.ipynb`)
+This notebook runs the workflow on the primary DFU single-cell dataset.
+1. **Import & Load Data**: Load the large `adata_fib.h5ad` demonstration dataset.
 2. **Lasso-View Refinement**: Read `selection.txt` (the initial cell selection set) and call `do_lasso_file` to propagate labels on the graph, outputting the topology-corrected cell selection set (Lasso selected cells).
 3. **LassoARE Reclustering**: Use `recluster_with_lasso_are` to perform adversarial reclustering. This process strengthens the selected cell features in the latent space and removes batch effects using the Harmony integration.
 4. **Visualization**: Directly call `sc.pl.umap` to plot the UMAP figures before and after the algorithm to visually compare the clustering performance.
+5. **Output**: The output AnnData files are saved under `new_adata/`.
+
+#### Option B: Fast Demo (`demo_single_cluster_fast.ipynb`)
+This notebook uses a lightweight, pre-processed Scanpy built-in dataset (`pbmc3k_processed`) for a fast, resource-friendly walkthrough.
+1. **Import & Load Data**: Load `data/pbmc3k_processed.h5ad`.
+2. **Simulate User Selection**: Select cells from the `B cells` cluster to simulate a user selecting cells in a visualization tool.
+3. **Lasso-View Refinement**: Call the in-memory `do_lasso` function to propagate labels on the graph and obtain topology-corrected cell selections.
+4. **LassoARE Reclustering**: Run `recluster_with_lasso_are` to perform adversarial reclustering in the latent space.
+5. **Visualization**: Generate UMAP plots to compare and inspect clustering results.
+6. **Output**: The output AnnData file is saved under `new_adata_fast/`.
