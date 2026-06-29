@@ -59,6 +59,44 @@ This notebook uses a lightweight, pre-processed Scanpy built-in dataset (`pbmc3k
 5. **Visualization**: Generate UMAP plots to compare and inspect clustering results.
 6. **Output**: The output AnnData file is saved under `new_adata_fast/`.
 
+## LassoARE System (Interactive Web Application)
+
+In addition, **LassoARE System** provides a plug-and-play interactive web application. It integrates a React frontend for interactive cell selection/lasso operation and a Python backend for job execution and single-cell/spatial data refinement.
+
+The system is located in the LassoARE-sys directory.
+
+### Features
+* **Interactive Frontend**: A user-friendly web interface (React + Vite) designed for visualizing cell clusters and performing lasso selections manually.
+* **Asynchronous Execution Engine**: A backend job queue (FastAPI) that manages PCA, graph construction, label propagation (Lasso-View), and adversarial reconstruction (LassoARE) tasks.
+* **Dual Execution Profiles**: Supports both CPU-only execution and GPU execution (NVIDIA CUDA 12.8 + RAPIDS acceleration for fast PCA/neighbors/Leiden/UMAP computations, with automatic fallback to CPU).
+
+### Installation & Launching
+
+See the detailed instructions in LassoARE-sys/README.md.
+
+#### 1. Native Setup
+To install dependencies automatically and set up conda/micromamba environments:
+```bash
+cd LassoARE-sys
+./install.sh
+```
+By default, the installer automatically detects the hardware profile (CPU or CUDA).
+
+To start the server:
+```bash
+./start.sh
+```
+The service is accessible at `http://127.0.0.1:15114`.
+
+#### 2. Docker Setup
+To run the system inside Docker containers:
+```bash
+cd LassoARE-sys
+./docker-start.sh --profile cpu   # For CPU environment
+# OR
+./docker-start.sh --profile cuda  # For CUDA environment (requires NVIDIA Container Toolkit)
+```
+
 ## Directory Structure
 
 Please make sure the following files are correctly placed in this folder:
@@ -76,6 +114,14 @@ this folder
 │       ├── __init__.py
 │       ├── plugins.py
 │       └── reconstruction_plugin.py
+├── LassoARE-sys/              # LassoARE System interactive web application (React + Python backend)
+│   ├── app/                   # Web application server & job executors
+│   ├── backend/               # Backend Python modules & computation CLIs
+│   ├── frontend/              # Interactive React web client
+│   ├── environments/          # CPU & CUDA Conda environment definitions
+│   ├── tests/                 # Unit and integration tests
+│   ├── README.md              # Documentation for the LassoARE System
+│   └── install.sh / start.sh  # Installation and launcher scripts
 ├── lassoView.cpp              # C++ pybind source code for Lasso-View
 ├── setup.py                   # Compilation configuration script for Lasso-View C++ module
 ├── lassoLPA.py                # Python wrapper for label propagation

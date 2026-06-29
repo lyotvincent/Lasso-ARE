@@ -1,0 +1,8 @@
+services:
+  lassoare:
+    image: ${LASSOARE_DOCKER_IMAGE:-lassoare-system:cuda}
+    build:
+      target: cuda
+    environment:
+      LASSOARE_PROFILE: cuda
+    gpus: all

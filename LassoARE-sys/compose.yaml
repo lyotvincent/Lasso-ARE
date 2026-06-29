@@ -1,0 +1,16 @@
+services:
+  lassoare:
+    image: ${LASSOARE_DOCKER_IMAGE:-lassoare-system:cpu}
+    build:
+      context: .
+      target: cpu
+    environment:
+      LASSOARE_PROFILE: cpu
+      LASSOARE_SMALL_SAMPLE_URL: ${LASSOARE_SMALL_SAMPLE_URL:-}
+    ports:
+      - "${LASSOARE_BIND_HOST:-127.0.0.1}:${LASSOARE_PORT:-15114}:15114"
+    volumes:
+      - lassoare-data:/data
+
+volumes:
+  lassoare-data:

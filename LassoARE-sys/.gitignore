@@ -1,0 +1,17 @@
+nvm-master
+# all of pycache
+**/__pycache__/
+*.py[cod]
+docker-data/
+*.h5ad
+disabled/
+tmp_data/
+*.h5ad_tmpdisabled
+*.tmpdisabled
+frontend/node_modules/
+latest.zip
+nvm-master.zip
+output.zip
+project.zip
+*.zip
+refs/

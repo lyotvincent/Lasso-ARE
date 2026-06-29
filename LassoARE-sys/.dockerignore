@@ -1,0 +1,16 @@
+.git
+.worktrees
+tmp_data
+disabled
+*.h5ad
+*.h5ad.*
+*.zip
+frontend/node_modules
+frontend/dist
+**/__pycache__
+**/*.pyc
+.pytest_cache
+nvm-master
+refs
+test_rsc
+docker-data
