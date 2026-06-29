@@ -1,36 +1,9 @@
 # PARE: an adversarial learning framework for integrating few-shot biological priors into single-cell and spatial omics embedding
+> With the rapid growth of single-cell and spatial omics, embeddings serve as the backbone of omics downstream workflows. Integrating few-shot priors into such embeddings is promising to offer a way to improve reliability for biologically guided analysis. However, existing embedding methods either neglect priors or struggle to balance biological priors and intrinsic data topology, hindering downstream analyses such as identifying confounded cell states and tissue niches. Here, we present a semi-supervised learning framework, Prior-enhanced Adversarial Reconstruction auto-Encoder (PARE), that refines latent embeddings by balancing intrinsic topology with biological priors. On this basis, we developed a plug-and-play interactive system leveraging an interactive lasso tool for human-in-the-loop discovery in single-cell and spatial omics. Importantly, PARE can directly refine pre-calculated embeddings rather than recalculating them from scratch. PARE outperforms existing methods including single-cell foundation models in dissecting precise expression patterns across scRNA-seq, spatial transcriptomics, MERFISH, and scATAC-seq. Specifically, in the diabetic foot ulcer scRNA-seq dataset, it identified three previously uncharacterized fibroblast subpopulations via few-shot priors based on MMP1+/MMP3+ cells. In spatial analysis, guided by few-shot priors based on TRAC-expression, PARE accurately distinguishes true T cells from tumor-associated macrophages with pseudo-high TRAC signals.
+
+![alt text](main-4fig.png)
+
 This repository is the methodology part of the PARE (Lasso-ARE) package, which integrates for interactive selection and high-resolution reclustering of single-cell and spatial omics data.
-
-## Directory Structure
-
-Please make sure the following files are correctly placed in this folder:
-
-```
-this folder
-├── LassoARE/                  # LassoARE deep adversarial clustering core package
-│   ├── __init__.py
-│   ├── lasso_ARE.py
-│   ├── recluster_scRNA.py
-│   ├── reconstruction.py
-│   ├── scARE.py
-│   ├── utils.py
-│   └── LassoARE_plugin/       # Plugin module (including spatial metric, soft guidance with Moran's I, etc.)
-│       ├── __init__.py
-│       ├── plugins.py
-│       └── reconstruction_plugin.py
-├── lassoView.cpp              # C++ pybind source code for Lasso-View
-├── setup.py                   # Compilation configuration script for Lasso-View C++ module
-├── lassoLPA.py                # Python wrapper for label propagation
-├── do_lasso.py                # High-level LassoRefine interface and visual comparison functions
-├── requirements.txt           # Pip package dependency list
-├── environment.yml            # Conda virtual environment configuration file
-├── install_python.sh          # One-click compilation and installation script via Pip
-├── install_conda.sh           # One-click compilation and installation script via Conda
-├── selection.txt              # Initial cell selection index file for demo testing
-├── demo_single_cluster.ipynb  # Standard demonstration Jupyter Notebook (using DFU dataset)
-├── demo_single_cluster_fast.ipynb # Fast demonstration Jupyter Notebook (using pbmc3k dataset)
-└── pairpotlpa.cpython-310-x86_64-linux-gnu.so # Pre-compiled C++ module for Linux x86_64 (Python 3.10)
-```
 
 ## Quick Start Guide
 
@@ -85,3 +58,34 @@ This notebook uses a lightweight, pre-processed Scanpy built-in dataset (`pbmc3k
 4. **LassoARE Reclustering**: Run `recluster_with_lasso_are` to perform adversarial reclustering in the latent space.
 5. **Visualization**: Generate UMAP plots to compare and inspect clustering results.
 6. **Output**: The output AnnData file is saved under `new_adata_fast/`.
+
+## Directory Structure
+
+Please make sure the following files are correctly placed in this folder:
+
+```
+this folder
+├── LassoARE/                  # LassoARE deep adversarial clustering core package
+│   ├── __init__.py
+│   ├── lasso_ARE.py
+│   ├── recluster_scRNA.py
+│   ├── reconstruction.py
+│   ├── scARE.py
+│   ├── utils.py
+│   └── LassoARE_plugin/       # Plugin module (including spatial metric, soft guidance with Moran's I, etc.)
+│       ├── __init__.py
+│       ├── plugins.py
+│       └── reconstruction_plugin.py
+├── lassoView.cpp              # C++ pybind source code for Lasso-View
+├── setup.py                   # Compilation configuration script for Lasso-View C++ module
+├── lassoLPA.py                # Python wrapper for label propagation
+├── do_lasso.py                # High-level LassoRefine interface and visual comparison functions
+├── requirements.txt           # Pip package dependency list
+├── environment.yml            # Conda virtual environment configuration file
+├── install_python.sh          # One-click compilation and installation script via Pip
+├── install_conda.sh           # One-click compilation and installation script via Conda
+├── selection.txt              # Initial cell selection index file for demo testing
+├── demo_single_cluster.ipynb  # Standard demonstration Jupyter Notebook (using DFU dataset)
+├── demo_single_cluster_fast.ipynb # Fast demonstration Jupyter Notebook (using pbmc3k dataset)
+└── pairpotlpa.cpython-310-x86_64-linux-gnu.so # Pre-compiled C++ module for Linux x86_64 (Python 3.10)
+```
