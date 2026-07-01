@@ -1,0 +1,25 @@
+Merged Benchmark,Metric,Metric Label,Mean_Pct_Lead_vs_Others_Avg,Mean_Pct_Lead_vs_Best_Other
+Recon(sc),Silhouette Score,Silhouette,712.811956276798,712.811956276798
+scRNA-seq,Silhouette Score,Silhouette,533.4866117642941,350.03959378809213
+Spatial,Silhouette Score,Silhouette,284.4842732414168,115.11430256715508
+Recon(sp),Silhouette Score,Silhouette,98.26769575572436,98.26769575572436
+MERFISH,Silhouette Score,Silhouette,76.59263384819711,39.04618572941674
+ATAC,Silhouette Score,Silhouette,23.714017560707294,23.714017560707294
+Recon(sc),Calinski-Harabasz Score,Calinski-Harabasz,7021.994044831544,7021.994044831544
+Spatial,Calinski-Harabasz Score,Calinski-Harabasz,3025.5371877554817,1693.7830842124304
+scRNA-seq,Calinski-Harabasz Score,Calinski-Harabasz,2545.691596426338,1647.0568382949891
+MERFISH,Calinski-Harabasz Score,Calinski-Harabasz,725.579716189002,616.7068186753472
+ATAC,Calinski-Harabasz Score,Calinski-Harabasz,291.46069956108056,291.46069956108056
+Recon(sp),Calinski-Harabasz Score,Calinski-Harabasz,270.62915042402614,270.62915042402614
+scRNA-seq,Davies-Bouldin Score,Davies-Bouldin,55.43847516250697,48.04311735540857
+Recon(sc),Davies-Bouldin Score,Davies-Bouldin,31.831600272701532,31.831600272701532
+ATAC,Davies-Bouldin Score,Davies-Bouldin,30.206924271788086,30.206924271788086
+Spatial,Davies-Bouldin Score,Davies-Bouldin,55.20900661224928,29.76100540715197
+Recon(sp),Davies-Bouldin Score,Davies-Bouldin,22.772612627589194,22.772612627589194
+MERFISH,Davies-Bouldin Score,Davies-Bouldin,12.067667443792445,0.9397416635942464
+Recon(sc),Modularity Score,Modularity,368.2655977864581,368.2655977864581
+Recon(sp),Modularity Score,Modularity,23.202509590718,23.202509590718
+scRNA-seq,Modularity Score,Modularity,39.45239925557234,14.371192864522778
+Spatial,Modularity Score,Modularity,31.585820356330753,8.894241996657993
+ATAC,Modularity Score,Modularity,-1.7938123902247747,-1.7938123902247747
+MERFISH,Modularity Score,Modularity,-1.1589882145667358,-3.005987284967511
