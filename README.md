@@ -5,6 +5,10 @@
 
 This repository is the methodology part of the PARE (Lasso-ARE) package, which integrates for interactive selection and high-resolution reclustering of single-cell and spatial omics data.
 
+## Reproducing Figures from the Paper
+
+We provide the source code and dataset structures to reproduce the key findings and figures presented in our paper. You can find them in the [figures_res](figures_res) folder. Please refer to the notebooks in each folder for details on how to generate the corresponding figures.
+
 ## Quick Start Guide
 
 ### 1. Compiling the C++ Module & Installing Dependencies
@@ -122,6 +126,10 @@ this folder
 │   ├── tests/                 # Unit and integration tests
 │   ├── README.md              # Documentation for the LassoARE System
 │   └── install.sh / start.sh  # Installation and launcher scripts
+├── figures_res/               # Figures reproduction notebooks and evaluation data
+│   ├── fig2/                  # Notebooks and data for Figure 2
+│   ├── fig4/                  # Notebooks and data for Figure 4
+│   └── fig5/                  # Notebooks and data for Figure 5
 ├── lassoView.cpp              # C++ pybind source code for Lasso-View
 ├── setup.py                   # Compilation configuration script for Lasso-View C++ module
 ├── lassoLPA.py                # Python wrapper for label propagation
