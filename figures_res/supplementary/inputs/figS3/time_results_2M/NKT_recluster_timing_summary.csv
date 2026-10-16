@@ -1,0 +1,4 @@
+config_id,config,plot_label,n,mean_seconds,std_seconds,median_seconds,min_seconds,max_seconds,ci95_seconds
+1,"Config 5 (Existing PCA, No Harmony)","Config 5
+Precomputed PCA
+Harmony",1,6153.948168977164,,6153.948168977164,6153.948168977164,6153.948168977164,0.0

@@ -1,0 +1,132 @@
+[
+  {
+    "source": "datasets_260407/intersection_indices.txt",
+    "copied_to": "inputs/figS1/dfu_selected.txt",
+    "sha256": "98cce9d841484daa4275338bd654f313982f3541ecbe5ba2b36da4691a9fc4d9",
+    "transformation": "byte-for-byte copy"
+  },
+  {
+    "source": "datasets_260407/spatial_adata/top_cells.txt",
+    "copied_to": "inputs/figS1/spatial_dfu_selected.txt",
+    "sha256": "8d14d744851da2bb3cb72148aeb2e84ef5e50ed252854fe87e8d28d367e95b3f",
+    "transformation": "byte-for-byte copy"
+  },
+  {
+    "source": "merfish/selected_list.txt",
+    "copied_to": "inputs/figS1/merfish_selected.txt",
+    "sha256": "314ac3199e33d1c6d30b490c9464638b45219231f2935eae5c60c8dfd8f16a73",
+    "transformation": "byte-for-byte copy"
+  },
+  {
+    "source": "atac_true/doTrueAtac/select_list.txt",
+    "copied_to": "inputs/figS1/atac_selected.txt",
+    "sha256": "24f061efe496b06a78b405fcd8b7c4e3f7a6cb36033a701afe50e5a0d108043c",
+    "transformation": "byte-for-byte copy"
+  },
+  {
+    "source": "new_evaluations/new_scRNA/clustering_results_with_bar.csv",
+    "copied_to": "inputs/figS2/clustering_results_with_bar.csv",
+    "sha256": "d282debad3a973f6d17cbe29ae246b0a78dfda5f2ca52764049981438825b131",
+    "transformation": "byte-for-byte copy"
+  },
+  {
+    "source": "robustness/output_robustness/robustness_malignant_gene_set_metrics.csv",
+    "copied_to": "inputs/figS4/robustness_malignant_gene_set_metrics.csv",
+    "sha256": "1736fe9318d3a9402b5f6165794d6002b3b8c620dde79917d98f640f88bacd3a",
+    "transformation": "byte-for-byte copy"
+  },
+  {
+    "source": "robustness/output_robustness/malignant_gene_set.json",
+    "copied_to": "inputs/figS4/malignant_gene_set.json",
+    "sha256": "410769cdd2e219e19897000603e6ccfd5d0fc581ba70c9cf2fc618b742433c00",
+    "transformation": "byte-for-byte copy"
+  },
+  {
+    "source": "new_evaluations/new_scRNA/downstream_figs/marker_specificity_statistics.csv",
+    "copied_to": "inputs/figS2/marker_specificity_statistics.csv",
+    "sha256": "8c2867e863911b9b63e8beb437b1cf6e06791365cc88bde4f2f129d744f4e3ca",
+    "transformation": "byte-for-byte copy"
+  },
+  {
+    "source": "new_evaluations/new_scRNA/downstream_figs/marker_score_donor_enrichment_significance.csv",
+    "copied_to": "inputs/figS2/marker_score_donor_enrichment_significance.csv",
+    "sha256": "ca86c85c8d78fe26a14a6d7da7c87c77b99c1c5bbfc15becc464e32e000623f1",
+    "transformation": "byte-for-byte copy"
+  },
+  {
+    "source": "new_evaluations/new_scRNA/downstream_figs/marker_score_refinement_pairwise_significance.csv",
+    "copied_to": "inputs/figS2/marker_score_refinement_pairwise_significance.csv",
+    "sha256": "9f9e23e233e430d402120ed4fc6e91820a8ec13dfb59170bbef9509003e09066",
+    "transformation": "byte-for-byte copy"
+  },
+  {
+    "source": "new_evaluations/new_scRNA/downstream_figs/marker_score_by_donor.csv",
+    "copied_to": "inputs/figS2/marker_score_by_donor.csv",
+    "sha256": "acea5eb4b0cc59300c0de9e8c9e25133246816e8543c3d95c91cd300eda159cd",
+    "transformation": "byte-for-byte copy"
+  },
+  {
+    "source": "new_evaluations/new_scRNA/downstream_figs/pathway_enrichment_results.csv",
+    "copied_to": "inputs/figS2/pathway_enrichment_results.csv",
+    "sha256": "aa5a2e07875e54c5da43c26dbc5f8852668b54447b522b12ab91265f88be50f8",
+    "transformation": "byte-for-byte copy"
+  },
+  {
+    "source": "time_batch/time_results/NKT_recluster_timing_each_run.csv",
+    "copied_to": "inputs/figS3/time_results/NKT_recluster_timing_each_run.csv",
+    "sha256": "39eb7e98fb8ecbe70e35ebe8077f84af13ba8f50d3a5194578e4cd6e187e8976",
+    "transformation": "Configuration labels translated to English; numeric fields unchanged",
+    "source_sha256": "c566aa23550eff21f3d2d09d55dc189bdcbf98171b6a99e277c4947169d1e512"
+  },
+  {
+    "source": "time_batch/time_results/NKT_recluster_timing_summary.csv",
+    "copied_to": "inputs/figS3/time_results/NKT_recluster_timing_summary.csv",
+    "sha256": "cf63af7369bb69bfd0e2cce6539458bc95e2673d55bf3b109344e5b07ad38797",
+    "transformation": "Configuration labels translated to English; numeric fields unchanged",
+    "source_sha256": "9fa389d728ebc79f4006db7a984c6a8f215b57a87ec20396f7149ff0acde1c9d"
+  },
+  {
+    "source": "time_batch/time_results_350k/NKT_recluster_timing_each_run.csv",
+    "copied_to": "inputs/figS3/time_results_350k/NKT_recluster_timing_each_run.csv",
+    "sha256": "091884345638813426dd03536b6e64dc6a2da12154f8c884edd5ad2ed4b4dda8",
+    "transformation": "Configuration labels translated to English; numeric fields unchanged",
+    "source_sha256": "577ff5cbbdd0576c7e224fd10bf0b246cbeae1762f817664e75bb3a8d9d6909a"
+  },
+  {
+    "source": "time_batch/time_results_350k/NKT_recluster_timing_summary.csv",
+    "copied_to": "inputs/figS3/time_results_350k/NKT_recluster_timing_summary.csv",
+    "sha256": "176bb7a7ae9c8150ff34b651e373743ffe51bfde2208d37fec8c1c29a2a4eb58",
+    "transformation": "Configuration labels translated to English; numeric fields unchanged",
+    "source_sha256": "ff293fba134f8a97ce0cf6bb12ebb3366f431293a006d2b7ff571e4fc1fee5bd"
+  },
+  {
+    "source": "time_batch/time_results_2M/NKT_recluster_timing_each_run.csv",
+    "copied_to": "inputs/figS3/time_results_2M/NKT_recluster_timing_each_run.csv",
+    "sha256": "b8d8ac96b68aecc957eb71da067608ec1b5ba4bdf7518948bea8ea3627f3c8ed",
+    "transformation": "Configuration labels translated to English; numeric fields unchanged",
+    "source_sha256": "b7efc5183c4322bb50cac8778ef55ccaa5663fec530b7d4652f7cdfd2e19402d"
+  },
+  {
+    "source": "time_batch/time_results_2M/NKT_recluster_timing_summary.csv",
+    "copied_to": "inputs/figS3/time_results_2M/NKT_recluster_timing_summary.csv",
+    "sha256": "5b98c6289392b3d7a0a7d2c2abab67183c0e8c00a7d022400c8df56b23878de6",
+    "transformation": "Configuration labels translated to English; numeric fields unchanged",
+    "source_sha256": "9fd84ac03f93b97a8f64d2d1548212b02ac80783c897ccabff82a64a507efed2"
+  },
+  {
+    "source": "NKT_tmp/draw_umap_breast.ipynb",
+    "cell_index": 0,
+    "variable": "user_selection",
+    "copied_to": "inputs/figS1/hbca_stripped_selected.txt",
+    "sha256": "47cf524a187dd9e8c0382ba796c417fd73da9a8912a5fd2fb4376956011b1198",
+    "transformation": "literal integer list extracted with ast.literal_eval"
+  },
+  {
+    "source": "NKT_tmp/new_pipeline_spatial.ipynb",
+    "cell_index": 2,
+    "variable": "selected_list2",
+    "copied_to": "inputs/figS1/visium_trac_selected.txt",
+    "sha256": "b582ab32bc1b9b1942cb5e1acf535280ff692a2e54c0c84732e2cb0b75cb1986",
+    "transformation": "literal integer list extracted with ast.literal_eval"
+  }
+]

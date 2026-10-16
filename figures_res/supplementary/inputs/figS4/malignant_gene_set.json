@@ -1,0 +1,56 @@
+{
+  "malignant_pattern": "Malig_IL2RA",
+  "effective_malignant_pattern": "Malig_IL2RA",
+  "matched_malignant_labels": [
+    "C07_Malig_IL2RA"
+  ],
+  "obs_col": "anno-NK",
+  "top_marker_count": 10,
+  "marker_genes": [
+    "RABGAP1L",
+    "LINC-PINT",
+    "CHST11",
+    "ATXN1",
+    "PDE3B",
+    "DENND4A",
+    "PTPRJ",
+    "NCALD",
+    "MBNL1",
+    "SIK3"
+  ],
+  "extra_genes": [
+    "MSI2",
+    "IL2RA",
+    "KSR1"
+  ],
+  "gene_set": [
+    "RABGAP1L",
+    "LINC-PINT",
+    "CHST11",
+    "ATXN1",
+    "PDE3B",
+    "DENND4A",
+    "PTPRJ",
+    "NCALD",
+    "MBNL1",
+    "SIK3",
+    "MSI2",
+    "IL2RA",
+    "KSR1"
+  ],
+  "present_gene_set": [
+    "RABGAP1L",
+    "LINC-PINT",
+    "CHST11",
+    "ATXN1",
+    "PDE3B",
+    "DENND4A",
+    "PTPRJ",
+    "NCALD",
+    "MBNL1",
+    "SIK3",
+    "MSI2",
+    "IL2RA",
+    "KSR1"
+  ]
+}

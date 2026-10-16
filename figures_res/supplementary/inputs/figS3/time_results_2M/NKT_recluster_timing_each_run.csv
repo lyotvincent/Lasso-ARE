@@ -1,0 +1,4 @@
+config_id,config,plot_label,repeat_id,seed,lasso,is_pca,do_harmony,existing_pca,elapsed_seconds
+1,"Config 5 (Existing PCA, Harmony)","Config 5
+Precomputed PCA
+Harmony",1,42,False,True,False,True,6153.948168977164

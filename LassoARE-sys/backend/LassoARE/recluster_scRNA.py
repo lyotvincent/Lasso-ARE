@@ -14,30 +14,30 @@ import scanpy.external.pp as pp
 def fast_neighbors_faiss(adata, use_rep, n_neighbors=100):
     from scipy.sparse import csr_matrix
     import faiss
-    """使用 FAISS 加速 neighbors 计算"""
+    """Accelerate nearest-neighbor computation with FAISS."""
     X = adata.obsm[use_rep].astype(np.float32)
     n_cells = X.shape[0]
     
-    # 创建 FAISS 索引
+    # Create the FAISS index.
     index = faiss.IndexFlatL2(X.shape[1])
     index.add(X)
     
-    # 搜索最近邻
+    # Find nearest neighbors.
     distances, indices = index.search(X, n_neighbors)
     
-    # 构建 connectivities 和 distances 稀疏矩阵
+    # Build sparse connectivity and distance matrices.
     rows = np.repeat(np.arange(n_cells), n_neighbors)
     cols = indices.flatten()
     dist_vals = distances.flatten()
     
-    # 转换为 connectivity 权重
-    sigma = np.mean(distances[:, 1])  # 使用第一个非自身邻居的平均距离
+    # Convert distances to connectivity weights.
+    sigma = np.mean(distances[:, 1])  # Mean distance to the first non-self neighbor.
     conn_vals = np.exp(-dist_vals / (2 * sigma ** 2))
     
     connectivities = csr_matrix((conn_vals, (rows, cols)), shape=(n_cells, n_cells))
     distances_sparse = csr_matrix((dist_vals, (rows, cols)), shape=(n_cells, n_cells))
     
-    # 存储到 adata
+    # Store the results in adata.
     adata.obsp['connectivities'] = connectivities
     adata.obsp['distances'] = distances_sparse
     adata.uns['neighbors'] = {
@@ -302,24 +302,24 @@ def recluster_with_existing_pca(adata, user_selected_lists, n_clusters=None,
                              lambda_cluster=1.0, lambda_recon=1.0,
                              leiden_r=0.2, z_dim=32, do_pp=False, existing_harmony=False ,do_harmony=False):
     if 'X_pca' not in adata.obsm:
-        raise ValueError("adata.obsm['X_pca'] 不存在，请先在外部完成 PCA 再调用该函数。")
+        raise ValueError("adata.obsm['X_pca'] is missing. Compute PCA externally before calling this function.")
     
-    # 若需要在本函数中执行 Harmony
+    # Optionally run Harmony in this function.
     if do_harmony:
         if 'batch' not in adata.obs.columns:
-            print("Warning: 未找到 batch 列，跳过 Harmony。")
+            print("Warning: No batch column found; skipping Harmony.")
         else:
             pp.harmony_integrate(adata, key='batch')
             adata.obsm['X_pca'] = adata.obsm['X_pca_harmony']
             existing_harmony = True
     
-    # 选择使用的 PCA 表征
+    # Select the PCA representation.
     if existing_harmony and 'X_pca_harmony' in adata.obsm:
         x = adata.obsm['X_pca_harmony']
     else:
         x = adata.obsm['X_pca']
     
-    # 原始计数（若维度与 PCA 不一致则回退为 PCA 表征，避免 ZINB 维度错误）
+    # Fall back to PCA when raw-count dimensions differ, avoiding a ZINB dimension mismatch.
     if hasattr(adata, 'raw') and adata.raw is not None:
         raw_X = adata.raw.X.todense() if scipy.sparse.issparse(adata.raw.X) else adata.raw.X
         raw_X = np.array(raw_X)
@@ -331,7 +331,7 @@ def recluster_with_existing_pca(adata, user_selected_lists, n_clusters=None,
         print(f"Warning: raw_X dim {raw_X.shape[1]} != PCA dim {x.shape[1]}, fallback to PCA matrix for raw_X to match ZINB input.")
         raw_X = x
     
-    # 自动估计簇数
+    # Estimate the number of clusters automatically.
     if n_clusters is None:
         if 'annotation' in adata.obs.columns:
             annotations = adata.obs['annotation']
@@ -345,7 +345,7 @@ def recluster_with_existing_pca(adata, user_selected_lists, n_clusters=None,
         print(f"Auto-detected {n_clusters} clusters")
     
     print(f"Using PCA matrix with shape {x.shape} for LassoARE reclustering.")
-    # 记录 PCA 元信息
+    # Record PCA metadata.
     adata.uns['LassoARE_pca'] = {
         'original_dim': adata.shape[1],
         'pca_dim': x.shape[1],
@@ -358,7 +358,7 @@ def recluster_with_existing_pca(adata, user_selected_lists, n_clusters=None,
     # size factor
     size_factors = adata.obs.size_factors.values if 'size_factors' in adata.obs else np.ones(adata.shape[0])
     
-    # 规范化用户选区格式
+    # Normalize the user-selection format.
     if user_selected_lists is None:
         user_selected_lists = []
     elif not isinstance(user_selected_lists, list):
@@ -374,7 +374,7 @@ def recluster_with_existing_pca(adata, user_selected_lists, n_clusters=None,
         selected_mask[group] = True
     adata.obs['LassoARE_selected'] = selected_mask
     
-    # 构建并训练模型
+    # Build and train the model.
     lasso_are = LassoARE(
         input_dim=x.shape[1],
         z_dim=z_dim,
@@ -415,7 +415,7 @@ def recluster_with_existing_pca(adata, user_selected_lists, n_clusters=None,
     adata.obs['LassoARE_clusters'] = y_pred.astype(np.int32)
     adata.obsm['LassoARE_latent'] = latent
     
-    # 可选下游图嵌和聚类
+    # Optionally compute downstream graph embeddings and clusters.
     if do_pp:
         leiden_adata = adata.copy()
         sc.pp.neighbors(leiden_adata, use_rep='LassoARE_latent', n_neighbors=100)

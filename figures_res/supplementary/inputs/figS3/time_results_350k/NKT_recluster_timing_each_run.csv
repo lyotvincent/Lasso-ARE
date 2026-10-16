@@ -1,0 +1,151 @@
+config_id,config,plot_label,repeat_id,seed,lasso,is_pca,do_harmony,existing_pca,elapsed_seconds
+1,"Config 1 (No PCA, No Harmony)","Config 1
+No PCA
+No Harmony",1,42,False,False,False,False,6852.0065882368945
+1,"Config 1 (No PCA, No Harmony)","Config 1
+No PCA
+No Harmony",2,43,False,False,False,False,6622.606651679147
+1,"Config 1 (No PCA, No Harmony)","Config 1
+No PCA
+No Harmony",3,44,False,False,False,False,5332.377603589091
+1,"Config 1 (No PCA, No Harmony)","Config 1
+No PCA
+No Harmony",4,45,False,False,False,False,3904.886152859777
+1,"Config 1 (No PCA, No Harmony)","Config 1
+No PCA
+No Harmony",5,46,False,False,False,False,5119.874628060032
+1,"Config 1 (No PCA, No Harmony)","Config 1
+No PCA
+No Harmony",6,47,False,False,False,False,3984.237782595679
+1,"Config 1 (No PCA, No Harmony)","Config 1
+No PCA
+No Harmony",7,48,False,False,False,False,4813.512648568954
+1,"Config 1 (No PCA, No Harmony)","Config 1
+No PCA
+No Harmony",8,49,False,False,False,False,5094.978706751019
+1,"Config 1 (No PCA, No Harmony)","Config 1
+No PCA
+No Harmony",9,50,False,False,False,False,5328.7807597699575
+1,"Config 1 (No PCA, No Harmony)","Config 1
+No PCA
+No Harmony",10,51,False,False,False,False,5293.353327577934
+2,"Config 2 (PCA, No Harmony)","Config 2
+PCA
+No Harmony",1,42,False,True,False,False,3904.7331116609275
+2,"Config 2 (PCA, No Harmony)","Config 2
+PCA
+No Harmony",2,43,False,True,False,False,3840.7806698046625
+2,"Config 2 (PCA, No Harmony)","Config 2
+PCA
+No Harmony",3,44,False,True,False,False,3849.1155069321394
+2,"Config 2 (PCA, No Harmony)","Config 2
+PCA
+No Harmony",4,45,False,True,False,False,3959.3027022951283
+2,"Config 2 (PCA, No Harmony)","Config 2
+PCA
+No Harmony",5,46,False,True,False,False,3893.4182178820483
+2,"Config 2 (PCA, No Harmony)","Config 2
+PCA
+No Harmony",6,47,False,True,False,False,3818.4535109917633
+2,"Config 2 (PCA, No Harmony)","Config 2
+PCA
+No Harmony",7,48,False,True,False,False,4134.888065956999
+2,"Config 2 (PCA, No Harmony)","Config 2
+PCA
+No Harmony",8,49,False,True,False,False,4204.656232130714
+2,"Config 2 (PCA, No Harmony)","Config 2
+PCA
+No Harmony",9,50,False,True,False,False,4666.429114992265
+2,"Config 2 (PCA, No Harmony)","Config 2
+PCA
+No Harmony",10,51,False,True,False,False,8374.497262887191
+3,"Config 3 (PCA, Harmony)","Config 3
+PCA
+Harmony",1,42,False,True,True,False,4702.592072962783
+3,"Config 3 (PCA, Harmony)","Config 3
+PCA
+Harmony",2,43,False,True,True,False,3923.2434603660367
+3,"Config 3 (PCA, Harmony)","Config 3
+PCA
+Harmony",3,44,False,True,True,False,4014.755304247141
+3,"Config 3 (PCA, Harmony)","Config 3
+PCA
+Harmony",4,45,False,True,True,False,3919.1959465569817
+3,"Config 3 (PCA, Harmony)","Config 3
+PCA
+Harmony",5,46,False,True,True,False,3913.108584794216
+3,"Config 3 (PCA, Harmony)","Config 3
+PCA
+Harmony",6,47,False,True,True,False,3946.327330098022
+3,"Config 3 (PCA, Harmony)","Config 3
+PCA
+Harmony",7,48,False,True,True,False,3922.904980923049
+3,"Config 3 (PCA, Harmony)","Config 3
+PCA
+Harmony",8,49,False,True,True,False,6051.693009901792
+3,"Config 3 (PCA, Harmony)","Config 3
+PCA
+Harmony",9,50,False,True,True,False,4053.9893632121384
+3,"Config 3 (PCA, Harmony)","Config 3
+PCA
+Harmony",10,51,False,True,True,False,3952.057249536272
+4,"Config 4 (Existing PCA, No Harmony)","Config 4
+Precomputed PCA
+No Harmony",1,42,False,True,False,True,897.9218564620242
+4,"Config 4 (Existing PCA, No Harmony)","Config 4
+Precomputed PCA
+No Harmony",2,43,False,True,False,True,883.7553483396769
+4,"Config 4 (Existing PCA, No Harmony)","Config 4
+Precomputed PCA
+No Harmony",3,44,False,True,False,True,869.2750886403956
+4,"Config 4 (Existing PCA, No Harmony)","Config 4
+Precomputed PCA
+No Harmony",4,45,False,True,False,True,910.0939505039714
+4,"Config 4 (Existing PCA, No Harmony)","Config 4
+Precomputed PCA
+No Harmony",5,46,False,True,False,True,843.2547102114186
+4,"Config 4 (Existing PCA, No Harmony)","Config 4
+Precomputed PCA
+No Harmony",6,47,False,True,False,True,1050.9271395108663
+4,"Config 4 (Existing PCA, No Harmony)","Config 4
+Precomputed PCA
+No Harmony",7,48,False,True,False,True,950.7423780844547
+4,"Config 4 (Existing PCA, No Harmony)","Config 4
+Precomputed PCA
+No Harmony",8,49,False,True,False,True,937.6421611490659
+4,"Config 4 (Existing PCA, No Harmony)","Config 4
+Precomputed PCA
+No Harmony",9,50,False,True,False,True,923.3520149569958
+4,"Config 4 (Existing PCA, No Harmony)","Config 4
+Precomputed PCA
+No Harmony",10,51,False,True,False,True,917.531490651425
+5,"Config 5 (Existing PCA, Harmony)","Config 5
+Precomputed PCA
+Harmony",1,42,False,True,True,True,937.430307528004
+5,"Config 5 (Existing PCA, Harmony)","Config 5
+Precomputed PCA
+Harmony",2,43,False,True,True,True,909.123201536946
+5,"Config 5 (Existing PCA, Harmony)","Config 5
+Precomputed PCA
+Harmony",3,44,False,True,True,True,1412.768739240244
+5,"Config 5 (Existing PCA, Harmony)","Config 5
+Precomputed PCA
+Harmony",4,45,False,True,True,True,971.8804203863256
+5,"Config 5 (Existing PCA, Harmony)","Config 5
+Precomputed PCA
+Harmony",5,46,False,True,True,True,944.2899239212275
+5,"Config 5 (Existing PCA, Harmony)","Config 5
+Precomputed PCA
+Harmony",6,47,False,True,True,True,921.6413971120492
+5,"Config 5 (Existing PCA, Harmony)","Config 5
+Precomputed PCA
+Harmony",7,48,False,True,True,True,910.9384586587548
+5,"Config 5 (Existing PCA, Harmony)","Config 5
+Precomputed PCA
+Harmony",8,49,False,True,True,True,916.0491367490031
+5,"Config 5 (Existing PCA, Harmony)","Config 5
+Precomputed PCA
+Harmony",9,50,False,True,True,True,917.0332161933184
+5,"Config 5 (Existing PCA, Harmony)","Config 5
+Precomputed PCA
+Harmony",10,51,False,True,True,True,904.336646689102

@@ -9,6 +9,8 @@ This repository is the methodology part of the PARE (Lasso-ARE) package, which i
 
 We provide the source code and dataset structures to reproduce the key findings and figures presented in our paper. You can find them in the [figures_res](figures_res) folder. Please refer to the notebooks in each folder for details on how to generate the corresponding figures.
 
+The [supplementary figure notebooks](figures_res/supplementary/README.md) cover Figures S1, S2, S3, S4 and S7. Seven notebooks include plotting instructions, lightweight result tables and data requirements. S2e-h, S3c-d and S4 use bundled tables alone; the remaining panels require saved H5AD inputs. S5 contains implementation parameters; S6 is excluded from this release.
+
 ## Quick Start Guide
 
 ### 1. Compiling the C++ Module & Installing Dependencies
@@ -128,8 +130,10 @@ this folder
 │   └── install.sh / start.sh  # Installation and launcher scripts
 ├── figures_res/               # Figures reproduction notebooks and evaluation data
 │   ├── fig2/                  # Notebooks and data for Figure 2
+│   ├── fig3/                  # Notebook for Figure 3
 │   ├── fig4/                  # Notebooks and data for Figure 4
-│   └── fig5/                  # Notebooks and data for Figure 5
+│   ├── fig5/                  # Notebooks and data for Figure 5
+│   └── supplementary/         # Seven notebooks for Figures S1-S4 and S7
 ├── lassoView.cpp              # C++ pybind source code for Lasso-View
 ├── setup.py                   # Compilation configuration script for Lasso-View C++ module
 ├── lassoLPA.py                # Python wrapper for label propagation
@@ -143,3 +147,18 @@ this folder
 ├── demo_single_cluster_fast.ipynb # Fast demonstration Jupyter Notebook (using pbmc3k dataset)
 └── pairpotlpa.cpython-310-x86_64-linux-gnu.so # Pre-compiled C++ module for Linux x86_64 (Python 3.10)
 ```
+
+## Source-language check
+
+Project code, comments, notebook prose and plotting labels are maintained in
+English. Before distributing changes, run:
+
+```bash
+python scripts/check_english_text.py
+```
+
+This scans Git-visible text files and decoded notebook/JSON content, including
+saved notebook outputs. Generated plots, ignored dependencies and binary files
+are excluded. Bundled third-party locale strings are emitted as ASCII escapes
+by the frontend build to avoid encoding-dependent source files while preserving
+the dependency's behavior.

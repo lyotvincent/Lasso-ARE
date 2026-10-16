@@ -3,8 +3,8 @@ from pybind11.setup_helpers import Pybind11Extension, build_ext
 
 ext_modules = [
     Pybind11Extension(
-        "pairpotlpa",                # 必须和 C++ 中 PYBIND11_MODULE 的名字一致
-        ["lassoView.cpp"],           # 源文件
+        "pairpotlpa",                # Must match PYBIND11_MODULE in the C++ source.
+        ["lassoView.cpp"],           # Source file.
         extra_compile_args=["-O3", "-std=c++17"],
     ),
 ]
